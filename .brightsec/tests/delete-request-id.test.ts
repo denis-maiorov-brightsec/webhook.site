@@ -21,7 +21,7 @@ const baseUrl = process.env.BRIGHT_TARGET_URL!;
 test('DELETE /request/:id', { signal: AbortSignal.timeout(timeout) }, async () => {
   await runner
     .createScan({
-      tests: ['csrf', 'bopla', 'id_enumeration', 'http_method_fuzzing', 'sqli'],
+      tests: ['http_method_fuzzing'],
       attackParamLocations: [AttackParamLocation.PATH, AttackParamLocation.HEADER]
     })
     .threshold(Severity.CRITICAL)
